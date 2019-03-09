@@ -4,7 +4,7 @@ bejelentkezes(felhasznalo, jelszo)
 
 felh_targyak(id, felhasznalo, targy_kod, tipus)
 
-targy(kod, nev, minta_felev, kredit, van)
+targy(kod, nev, minta_felev, kredit)
 
 elofeltetel(id, targy_kod, feltetel_kod, felev)
 
@@ -63,32 +63,37 @@ WHERE felhasznalo = @felhasznalonev AND targy_kod = @targykod
 
 ---------------------------------------
 
---felvehető tárgyak listája (egyelőre csak tárgykódok listája; vizsgakurzusok hiányoznak)
+--felvehető tárgyak listája
 ```
-SELECT kod
+SELECT kod, nev, minta_felev, kredit
 FROM targy
-WHERE van = 'van'
-INTERSECT
+WHERE kod NOT IN
+(
+
 SELECT kod
 FROM targy AS t
 JOIN elofeltetel AS e ON t.kod = e.targy_kod
 WHERE e.felev = 'elozo'
 	AND e.feltetel_kod NOT IN (
 		SELECT targy_kod
-		FROM felh_targy
-		WHERE felhasznalo = @felhasznalonev
+		FROM felh_targyak
+		WHERE felhasznalo = 'FELHASZNALONEV'
 			AND tipus = 'teljesitett'
 	)
-INTERSECT
+	
+UNION
+
 SELECT kod
 FROM targy AS t
 JOIN elofeltetel AS e ON t.kod = e.targy_kod
 WHERE e.felev = 'mostani'
 	AND e.feltetel_kod NOT IN (
 		SELECT targy_kod
-		FROM felh_targy
-		WHERE felhasznalo = @felhasznalonev
+		FROM felh_targyak
+		WHERE felhasznalo = 'FELHASZNALONEV'
 			AND tipus = 'jelenlegi'
 	)
+	
+)
 ;
 ```

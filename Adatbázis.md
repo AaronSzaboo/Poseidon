@@ -1,16 +1,12 @@
 #### Táblák:
 
-bejelentkezes(felhasznalo, jelszo)
+bejelentkezes(**felhasznalo**, jelszo)
 
-felh_targyak(id, felhasznalo, targy_kod, tipus)
+felh_targyak(**id**, felhasznalo, targy_kod, tipus)
 
-targy(kod, nev, minta_felev, kredit)
+targy(**kod**, nev, minta_felev, kredit)
 
-elofeltetel(id, targy_kod, feltetel_kod, felev)
-
-targyak2019tavasz(kod)
-
-vizsgakurzus2019tavasz(kod)
+elofeltetel(**id**, targy_kod, feltetel_kod, felev)
 
 
 #### Lekérdezések

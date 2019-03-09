@@ -15,24 +15,24 @@ elofeltetel(**id**, targy_kod, feltetel_kod, felev)
 ```
 SELECT COUNT(*)
 FROM bejelentkezes
-WHEN @felhasznalonev = felhasznalo
+WHEN 'FELHASZNALONEV' = felhasznalo
 ```
 --regisztráció
 ```
 INSERT INTO bejelentkezes
-VALUES (@felhasznalonev, @jelszo)
+VALUES ('FELHASZNALONEV', 'JELSZO')
 ```
 --bejelentkezes
 ```
 SELECT (
 CASE
-  WHEN @jelszo = jelszo
+  WHEN 'JELSZO' = jelszo
   THEN 'igen'
   ELSE 'nem'
 END
 ) AS valasz
 FROM bejelentkezes
-WHERE felhasznalo = @felhasznalonev
+WHERE felhasznalo = 'FELHASZNALONEV'
 ```
 
 ---------------------------------
@@ -41,20 +41,20 @@ WHERE felhasznalo = @felhasznalonev
 ```
 INSERT INTO felh_targyak (felhasznalo, targy_kod, tipus)
 VALUES
-(@felhasznalonev, @targykod, 'teljesitett')
+('FELHASZNALONEV', 'TARGYKOD', 'teljesitett')
 ```
 
 --felvett tárgy beszúrása
 ```
 INSERT INTO felh_targyak (felhasznalo, targy_kod, tipus)
 VALUES
-(@felhasznalonev, @targykod, 'jelenlegi')
+('FELHASZNALONEV, 'TARGYKOD', 'jelenlegi')
 ```
 
 --tárgy törlése
 ```
 DELETE FROM felh_targyak
-WHERE felhasznalo = @felhasznalonev AND targy_kod = @targykod
+WHERE felhasznalo = 'FELHASZNALONEV' AND targy_kod = 'TARGYKOD'
 ```
 
 ---------------------------------------

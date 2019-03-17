@@ -15,7 +15,7 @@ elofeltetel(**id**, targy_kod, feltetel_kod, felev)
 ```
 SELECT COUNT(*)
 FROM bejelentkezes
-WHEN 'FELHASZNALONEV' = felhasznalo
+WHERE felhasznalo = 'FELHASZNALONEV'
 ```
 --regisztráció
 ```

@@ -29,7 +29,7 @@ public class AsyncRegister extends AsyncTask<String, Void, Integer> {
         } else if (!password.equals(verifyPassword)) {
             return DIFFERENT_PASSWORDS;
         } else {
-            try {
+            try { // TODO change to try with resources, so that the connection always gets closed
                 DriverManager.registerDriver(new net.sourceforge.jtds.jdbc.Driver());
                 String UrlString =
                         "jdbc:jtds:sqlserver://193.6.33.140:1433/PoseidonDb;user=poseidon;password=Poseidon_1";
@@ -52,7 +52,7 @@ public class AsyncRegister extends AsyncTask<String, Void, Integer> {
                     }
 
                     sql = "INSERT INTO bejelentkezes\n" +
-                            "VALUES ('" + username + "', '" + password + "')";
+                            "VALUES ('" + username + "', '" + hash(password) + "')";
                     statement.executeUpdate(sql);
                     conn.close();
                     return OK;

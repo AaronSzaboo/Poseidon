@@ -13,7 +13,10 @@ public class LoginDemo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_demo);
 
-        okRegister();
+        wrongPasswordLogin();
+        //noNameLogin();
+        //okLogin();
+        //okRegister();
     }
 
     private void okRegister() {
@@ -48,6 +51,30 @@ public class LoginDemo extends AppCompatActivity {
         Authentication authentication = new Authentication();
         TextView textView = findViewById(R.id.textView);
         authentication.login("Hello", "", (Integer result) -> {
+            textView.setText(result.toString());
+        });
+    }
+
+    private void okLogin() {
+        Authentication authentication = new Authentication();
+        TextView textView = findViewById(R.id.textView);
+        authentication.login("newName", "mypassword", (Integer result) -> {
+            textView.setText(result.toString());
+        });
+    }
+
+    private void noNameLogin() {
+        Authentication authentication = new Authentication();
+        TextView textView = findViewById(R.id.textView);
+        authentication.login("No such name", "mypassword", (Integer result) -> {
+            textView.setText(result.toString());
+        });
+    }
+
+    private void wrongPasswordLogin() {
+        Authentication authentication = new Authentication();
+        TextView textView = findViewById(R.id.textView);
+        authentication.login("newName", "wrongPassword", (Integer result) -> {
             textView.setText(result.toString());
         });
     }

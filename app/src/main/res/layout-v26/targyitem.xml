@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@color/hatter">
+
+
+<android.support.v7.widget.AppCompatImageView
+    android:id="@+id/logo"
+    android:layout_width="80dp"
+    android:layout_height="105dp"
+    android:layout_marginLeft="10dp"
+    app:srcCompat="@drawable/orarend" />
+
+<TextView
+    android:id="@+id/text1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="6dp"
+    android:layout_toRightOf="@+id/logo"
+    android:text="Targynev"
+    android:textColor="@color/vilagoskek"
+    android:textSize="18sp"
+    android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/logo"
+
+        android:textAlignment="viewEnd"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="161dp"
+        android:layout_marginLeft="118dp"
+        android:layout_marginTop="161dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="6dp"
+        android:layout_toRightOf="@+id/logo"
+        android:text="kezdes"
+        android:textColor="@color/vilagoskek"
+        android:textSize="16sp"
+        android:textStyle="" />
+
+
+</RelativeLayout>

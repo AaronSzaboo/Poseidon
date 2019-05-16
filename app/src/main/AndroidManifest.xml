@@ -2,20 +2,50 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="hu.pemik.poseidon">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/p2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/p2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="hu.pemik.poseidon.MainActivity">
+        <activity android:name=".chat"></activity>
+        <activity android:name=".reg" />
+        <activity android:name=".m">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".tobb" />
+        <activity android:name=".base" />
+        <activity
+            android:name=".Alaptargyak"
+            android:label="@string/title_activity_alaptargyak"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Fooldal" />
+        <activity android:name=".Pentek" />
+        <activity android:name=".Csutortok" />
+        <activity android:name=".Szerda" />
+        <activity android:name=".Orarendmenu" />
+        <activity android:name=".Kedd" />
+        <activity android:name=".Hetfo" />
+        <activity android:name=".nap" />
+        <activity android:name=".Menu" />
+        <activity android:name=".Register" />
+        <activity android:name=".Login">
+
+        </activity>
+        <activity
+            android:name=".authentication.LoginDemo"
+            android:exported="true" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

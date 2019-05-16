@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Poseidon</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="semmi"></string>
+    <string name="loginbutton">loginbutton</string>
+    <string name="logo">logo</string>
+    <string name="atreg">atreg</string>
+    <string name="valami">valami</string>
+    <string name="menu">Menü</string>
+
+    <string-array name="Main">
+        <item>Órarend</item>
+        <item>Masodik</item>
+        <item>Harmadik</item>
+        <item>Negyedik</item>
+    </string-array>
+
+    <string-array name="Description">
+        <item>Órarend</item>
+        <item>Masodik</item>
+        <item>Harmadik</item>
+        <item>Negyedik</item>
+    </string-array>
+    <string name="title_activity_alaptargyak">Alaptargyak</string>
 </resources>
